@@ -17,8 +17,14 @@ npm run build
 
 ## Deploy on Render
 
-1. Create a new Static Site on Render.
-2. Connect this repository or upload the source.
-3. Set the build command to `npm install && npm run build`.
-4. Set the publish directory to `dist`.
-5. Keep `render.yaml` in the repo if you want Render Blueprint deployment.
+1. Create a new **Web Service** on Render from this GitHub repo.
+2. Set the build command to `npm install && npm run build`.
+3. Set the start command to `npm start`.
+4. Add environment variables for your external MySQL database:
+	- `DB_HOST`
+	- `DB_PORT`
+	- `DB_USER`
+	- `DB_PASSWORD`
+	- `DB_NAME`
+	- `DB_SSL` if your provider requires TLS
+5. Keep `render.yaml` in the repo for blueprint deploys.
